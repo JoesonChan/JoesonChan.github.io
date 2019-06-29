@@ -379,6 +379,10 @@
           
 
   
+    <div class="comments" id="comments">
+    </div>
+
+  
 
 
 
@@ -639,6 +643,32 @@ show_date_time();
   
 
   
+  
+
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+<script>
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: '73A6E5k615onM2CW2v4Q2lhL-gzGzoHsz',
+    appKey: 'kWgcvcAvbpxdeFgHouuwzwTU',
+    placeholder: '欢迎留下您宝贵的建议哟，评论时可填写邮箱方便消息回复~',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false,
+    lang: '' || 'zh-cn'
+  });
+</script>
+
+
 
 
   
